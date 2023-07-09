@@ -8,6 +8,7 @@ const StateTutorial = () => {
     sNum: 0
   })
   const [calc, setCalc] = useState({})
+  const [viewCalc, setViewCalc] = useState(false)
   
   
   let onChange = (event) => {
@@ -31,6 +32,7 @@ const StateTutorial = () => {
     const multiply = a * b;
     const divide = a / b;
     setCalc({add:add, subtract:subtract, multiply:multiply, divide:divide})
+    setViewCalc(true)
   }
 
 
@@ -67,6 +69,7 @@ const StateTutorial = () => {
       <br />
       <button onClick={() => calculate()}>Calculate Numbers</button>
 
+    {viewCalc && 
       <div style={{textAlign:"left"}}>
         <ul>
         <li>Add: {calc.add}</li>
@@ -74,7 +77,10 @@ const StateTutorial = () => {
         <li>Multiply: {calc.multiply}</li>
         <li>Divide: {calc.divide}</li>
         </ul>
+        <br />
+        <button onClick={() => setViewCalc(false)}>Hide Calculations</button>
       </div>
+}
 
 
 
