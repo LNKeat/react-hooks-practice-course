@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const StateTutorial = () => {
-  const [inputValue, setInputValue] = useState("Pedro");
   const [counter, setCounter] = useState(0)
   const [numbers, setNumbers] = useState({
     fNum: 0,
@@ -10,11 +9,6 @@ const StateTutorial = () => {
   const [calc, setCalc] = useState({})
   const [viewCalc, setViewCalc] = useState(false)
   
-  
-  let onChange = (event) => {
-    const newValue = event.target.value;
-    setInputValue(newValue);
-  };
 
   const numChange = (event) => {
     const newNum = parseInt(event.target.value)
@@ -35,12 +29,9 @@ const StateTutorial = () => {
     setViewCalc(true)
   }
 
-
-
   return (
     <div>
-      <input placeholder="enter something..." onChange={onChange} />
-      {inputValue}
+      <h1>State & Form Practice</h1>
       <br />
       <h2>Likes:</h2>
       <input placeholder={counter} />
